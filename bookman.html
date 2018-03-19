@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理</title>
+    <script type="text/javascript" src="lib/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/css/bookman.css">
+</head>
+<body>
+    <div class="container">
+        <div class="searchct">
+            <div class="form form-inline">
+                <input class="form-control" type="text" name="" id="" placeholder="书名">
+                <input class="form-control" type="text" name="" id="" placeholder="作者">
+                <input class="form-control" type="text" name="" id="" placeholder="出版社">
+                <button class="btn btn-primary">查询</button>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover table-striped">
+            <tr><th>书名</th><th>作者</th><th>出版社</th><th>版次</th><th>数量</th><th>操作</th></tr>
+            <tr><td>浮生物语肆</td><td>裟椤双树</td><td>中国致公出版社</td><td>2015年7月第1版</td><td>66</td><td><a class="label label-info"  data-toggle="modal" data-target="#bookmsg"><span class="glyphicon glyphicon-edit"></span>修改</a></td></tr>
+            <tr><td>浮生物语肆</td><td>裟椤双树</td><td>中国致公出版社</td><td>2015年7月第1版</td><td>66</td><td><a class="label label-info"  data-toggle="modal" data-target="#bookmsg"><span class="glyphicon glyphicon-edit"></span>修改</a></td></tr>
+            <tr><td>浮生物语肆</td><td>裟椤双树</td><td>中国致公出版社</td><td>2015年7月第1版</td><td>66</td><td><a class="label label-info"  data-toggle="modal" data-target="#bookmsg"><span class="glyphicon glyphicon-edit"></span>修改</a></td></tr>
+            <tr><td>浮生物语肆</td><td>裟椤双树</td><td>中国致公出版社</td><td>2015年7月第1版</td><td>66</td><td><a class="label label-info"  data-toggle="modal" data-target="#bookmsg"><span class="glyphicon glyphicon-edit"></span>修改</a></td></tr>
+            <tr><td>浮生物语肆</td><td>裟椤双树</td><td>中国致公出版社</td><td>2015年7月第1版</td><td>66</td><td><a class="label label-info"  data-toggle="modal" data-target="#bookmsg"><span class="glyphicon glyphicon-edit"></span>修改</a></td></tr>
+            <tr><td>浮生物语肆</td><td>裟椤双树</td><td>中国致公出版社</td><td>2015年7月第1版</td><td>66</td><td><a class="label label-info"  data-toggle="modal" data-target="#bookmsg"><span class="glyphicon glyphicon-edit"></span>修改</a></td></tr>
+            <tr><td>浮生物语肆</td><td>裟椤双树</td><td>中国致公出版社</td><td>2015年7月第1版</td><td>66</td><td><a class="label label-info"  data-toggle="modal" data-target="#bookmsg"><span class="glyphicon glyphicon-edit"></span>修改</a></td></tr>
+            <tr><td>浮生物语肆</td><td>裟椤双树</td><td>中国致公出版社</td><td>2015年7月第1版</td><td>66</td><td><a class="label label-info"  data-toggle="modal" data-target="#bookmsg"><span class="glyphicon glyphicon-edit"></span>修改</a></td></tr>
+        </table>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="bookmsg">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">修改信息</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form">
+                        <input class="form-control" type="text" name="" id="" placeholder="书名"><br>
+                        <input class="form-control" type="text" name="" id="" placeholder="作者"><br>
+                        <input class="form-control" type="text" name="" id="" placeholder="出版社"><br>
+                        <input class="form-control" type="text" name="" id="" placeholder="版次"><br>
+                        <input class="form-control" type="text" name="" id="" placeholder="数量"><br>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">修改</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</body>
+</html>
