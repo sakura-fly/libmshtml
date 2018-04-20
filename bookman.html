@@ -28,23 +28,9 @@
         </div>
 
 
-        <table class="layui-table" lay-data="{height:315, url:'/libms/booklist.json', page:true, id:'test'}" lay-filter="test">
-            <thead>
-            <tr>
-                <th lay-data="{field:'name'}">书名</th>
-                <th lay-data="{field:'author'}">作者</th>
-                <th lay-data="{field:'publisher'}">出版社</th>
-                <th lay-data="{field:'edition'}">版次</th>
-                <th lay-data="{field:'num'}">数量</th>
-                <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}">操作</th>
-            </tr>
-            <script type="text/html" id="barDemo">
-                <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-                <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-            </script>
 
-
+        <!--<table id="test" class="layui-table" lay-data="{height:315, url:'/demo/table/user/', page:true, id:'test'}" lay-filter="test">-->
+            <!--<thead>-->
             <!--<tr>-->
                 <!--<th lay-data="{field:'id', width:80, sort: true}">ID</th>-->
                 <!--<th lay-data="{field:'username', width:80}">用户名</th>-->
@@ -56,8 +42,51 @@
                 <!--<th lay-data="{field:'classify'}">职业</th>-->
                 <!--<th lay-data="{field:'wealth', sort: true}">财富</th>-->
             <!--</tr>-->
+            <!--</thead>-->
+        <!--</table>-->
+
+
+
+
+
+
+
+
+
+
+
+        <table class="layui-table" lay-data="{ url:'booklist.json', page:true, id:'test'}" lay-filter="test">
+            <thead>
+            <tr>
+                <th lay-data="{field:'name'}">书名</th>
+                <th lay-data="{field:'author'}">作者</th>
+                <th lay-data="{field:'publisher'}">出版社</th>
+                <th lay-data="{field:'edition'}">版次</th>
+                <th lay-data="{field:'num'}">数量</th>
+                <!--<th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}">操作</th>-->
+            </tr>
+            <!--<script type="text/html" id="barDemo">-->
+                <!--<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>-->
+                <!--<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
+                <!--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>-->
+            <!--</script>-->
+
+
             </thead>
         </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
