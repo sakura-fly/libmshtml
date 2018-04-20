@@ -28,7 +28,7 @@
     </div>
 
 
-    <table class="layui-table" id="qktb">
+    <table class="layui-table" id="bktb" lay-filter="bktb">
 
         </thead>
     </table>
@@ -43,20 +43,47 @@
         layui.use('table', function() {
             var table = layui.table;
             table.render({
-                elem: '#qktb',
+                elem: '#bktb',
                 url:'booklist.json',
                 page:true,
+
                 cols: [[
                     {field:'name',  title: '名称'},
                     {field:'author',  title: '作者'},
                     {field:'publisher',  title: '出版社'},
                     {field:'edition',  title: '版次'},
-                    {field:'num',  title: '数量'},
+                    {field:'num',  title: '数量', },
+                    {fixed: 'right', width:200, align:'center', toolbar: '#barDemo',  title: '操作'}
                 ]]
 
 
             });
+            //监听工具条
+            table.on('tool(bktb)', function(obj){
+                var data = obj.data;
+                if(obj.event === 'detail'){
+                    layer.msg('ID：'+ data.id + ' 的查看操作');
+                } else if(obj.event === 'del'){
+                    layer.confirm('真的删除行么', function(index){
+                        obj.del();
+                        layer.close(index);
+                    });
+                } else if(obj.event === 'edit'){
+                    layer.alert('编辑行：<br>'+ JSON.stringify(data))
+                }
+            });
         });
+
+
+
+
+
     });
+
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 
 </script>

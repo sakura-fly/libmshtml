@@ -28,7 +28,7 @@
     </div>
 
 
-    <table class="layui-table" id="qktb">
+    <table class="layui-table" id="qktb" lay-filter="qktb">
 
         </thead>
     </table>
@@ -51,11 +51,32 @@
                     {field:'publisher',  title: '出版社'},
                     {field:'edition',  title: '期数'},
                     {field:'num',  title: '数量'},
+                    {fixed: 'right', width:200, align:'center', toolbar: '#barDemo',  title: '操作'}
                     ]]
 
 
             });
+            //监听工具条
+            table.on('tool(qktb)', function(obj){
+                var data = obj.data;
+                if(obj.event === 'detail'){
+                    layer.msg('ID：'+ data.id + ' 的查看操作');
+                } else if(obj.event === 'del'){
+                    layer.confirm('真的删除行么', function(index){
+                        obj.del();
+                        layer.close(index);
+                    });
+                } else if(obj.event === 'edit'){
+                    layer.alert('编辑行：<br>'+ JSON.stringify(data))
+                }
+            });
         });
     });
+
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 
 </script>
