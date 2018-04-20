@@ -18,17 +18,17 @@
     <div class="tgroup">
         <div class="form form-inline">
             <input class="form-control" type="text" name="" id="bookname" placeholder="名称">
-            <input class="form-control" type="text" name="" id="author" placeholder="作者">
+            <!--<input class="form-control" type="text" name="" id="author" placeholder="作者">-->
             <input class="form-control" type="text" name="" id="publisher" placeholder="出版社">
             <button class="btn btn-primary">查询</button>
         </div>
     </div>
-    <div class="tgroup">
-        <button class="btn btn-success" id="addbook" ><span class="glyphicon glyphicon-plus"></span>添加</button>
-    </div>
+    <!--<div class="tgroup">-->
+        <!--<button class="btn btn-success" id="addbook" ><span class="glyphicon glyphicon-plus"></span>添加</button>-->
+    <!--</div>-->
 
 
-    <table class="layui-table" id="qktb">
+    <table class="layui-table" id="usertb" lay-filter="usertb">
 
         </thead>
     </table>
@@ -43,20 +43,40 @@
         layui.use('table', function() {
             var table = layui.table;
             table.render({
-                elem: '#qktb',
-                url:'booklist.json',
+                elem: '#usertb',
+                url:'userlist.json',
                 page:true,
                 cols: [[
-                    {field:'name',  title: '名称'},
-                    {field:'author',  title: '作者'},
-                    {field:'publisher',  title: '出版社'},
-                    {field:'edition',  title: '版次'},
-                    {field:'num',  title: '数量'},
+                    {field:'uname',  title: '用户名'},
+                    {field:'name',  title: '姓名'},
+                    {field:'ctime',  title: '创建时间'},
+                    {field:'phone',  title: '电话'},
+                    {fixed: 'right', width:200, align:'center', toolbar: '#barDemo',  title: '操作'}
                 ]]
 
 
             });
+            //监听工具条
+            table.on('tool(usertb)', function(obj){
+                var data = obj.data;
+                if(obj.event === 'detail'){
+                    layer.msg('ID：'+ data.id + ' 的查看操作');
+                } else if(obj.event === 'del'){
+                    layer.confirm('真的删除行么', function(index){
+                        obj.del();
+                        layer.close(index);
+                    });
+                } else if(obj.event === 'edit'){
+                    layer.alert('编辑行：<br>'+ JSON.stringify(data))
+                }
+            });
         });
     });
+
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 
 </script>

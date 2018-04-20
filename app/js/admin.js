@@ -5,4 +5,7 @@ $(document).ready(function() {
     $("#books").click(function (e) {
         $("#ucontent").load("bookman.html");
     })
+    $("#user").click(function (e) {
+        $("#ucontent").load("userman.html");
+    })
 });
