@@ -18,7 +18,7 @@
     <div class="tgroup">
         <div class="form form-inline">
             <input class="form-control" type="text" name="" id="bookname" placeholder="名称">
-            <input class="form-control" type="text" name="" id="author" placeholder="作者">
+            <!--<input class="form-control" type="text" name="" id="author" placeholder="作者">-->
             <input class="form-control" type="text" name="" id="publisher" placeholder="出版社">
             <button class="btn btn-primary">查询</button>
         </div>
@@ -44,15 +44,14 @@
             var table = layui.table;
             table.render({
                 elem: '#qktb',
-                url:'booklist.json',
+                url:'qikanlist.json',
                 page:true,
                 cols: [[
                     {field:'name',  title: '名称'},
-                    {field:'author',  title: '作者'},
                     {field:'publisher',  title: '出版社'},
-                    {field:'edition',  title: '版次'},
+                    {field:'edition',  title: '期数'},
                     {field:'num',  title: '数量'},
-                ]]
+                    ]]
 
 
             });
