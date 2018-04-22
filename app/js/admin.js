@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $("#qk").click(function(event) {
     	$("#ucontent").load("qikanadmin.html");
     });
@@ -8,4 +9,9 @@ $(document).ready(function() {
     $("#user").click(function (e) {
         $("#ucontent").load("userman.html");
     })
+    $("#qkfx").click(function (e) {
+        $("#ucontent").load("qkfx.html");
+    })
+    $("#qk").click();
+
 });
