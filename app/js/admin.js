@@ -12,6 +12,9 @@ $(document).ready(function() {
     $("#qkfx").click(function (e) {
         $("#ucontent").load("qkfx.html");
     })
+    $("#booksfx").click(function (e) {
+        $("#ucontent").load("bookfx.html");
+    })
     $("#qk").click();
 
 });

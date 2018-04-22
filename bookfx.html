@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍分析</title>
+    <!--<script type="text/javascript" src="/libms/lib/js/jquery-3.2.1.min.js"></script>-->
+    <!--<script type="text/javascript" src="/libms/lib/js/bootstrap.min.js"></script>-->
+
+    <!--<script src="/libms/lib/layui/layui.js" type="text/javascript"></script>-->
+    <!--<link rel="stylesheet" href="/libms/lib/layui/css/layui.css">-->
+    <!--<link rel="stylesheet" href="/libms/lib/css/bootstrap.min.css">-->
+</head>
+<body>
+<div class="container">
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 90px;">分析类型</label>
+            <div class="layui-input-block">
+                <input type="radio" name="type" value="1" title="出版社" lay-filter="switchTest" checked>
+                <input type="radio" name="type" value="2" title="类型" lay-filter="switchTest">
+                <input type="radio" name="type" value="3" title="作者" lay-filter="switchTest">
+            </div>
+        </div>
+    </form>
+    <table class="layui-table" id="bookfxt" lay-filter="bookfxt">
+
+    </table>
+
+    <script>
+        layui.use('form', function(){
+            var form = layui.form;
+            form.render();
+            form.on('radio()', function(data){
+                console.log(data.elem); //得到radio原始DOM对象
+                console.log(data.value); //被点击的radio的value值
+            });
+        });
+        layui.use('table', function() {
+            var table = layui.table;
+            table.render({
+                elem: '#bookfxt',
+                url:'qkfx.json',
+                cols: [[
+                    {field:'publisher',  title: '出版社'},
+                    {field:'num',  title: '借阅次数', },
+                ]]
+
+
+            });
+        });
+    </script>
+
+</div>
+</body>
+</html>
