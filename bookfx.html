@@ -22,11 +22,21 @@
             </div>
         </div>
     </form>
+    <button class="btn btn-default" id="exportexcel">导出excel</button>
+    <button class="btn btn-primary" id="zhutu">显示柱状图</button>
+    <button class="btn btn-info" id="zhexiantu">显示折线图</button>
+    <button class="btn btn-success" id="bingyu">显示饼状图</button>
     <table class="layui-table" id="bookfxt" lay-filter="bookfxt">
 
     </table>
 
+
+</div>
+</body>
+</html>
+
     <script>
+        var table;
         layui.use('form', function(){
             var form = layui.form;
             form.render();
@@ -36,7 +46,7 @@
             });
         });
         layui.use('table', function() {
-            var table = layui.table;
+            table = layui.table;
             table.render({
                 elem: '#bookfxt',
                 url:'qkfx.json',
@@ -48,8 +58,63 @@
 
             });
         });
-    </script>
 
-</div>
-</body>
-</html>
+$("#exportexcel").click(function(event) {
+    $.data2excel({
+        name: "书籍资料分析",
+        filename:"书籍资料分析",
+        content:[
+             {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }
+        ],
+        title:[
+            "出版社","数量"
+        ],
+        fileds:["publisher", "num"],
+    })
+});
+    </script>

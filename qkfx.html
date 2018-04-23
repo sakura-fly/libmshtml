@@ -22,34 +22,100 @@
                 </div>
             </div>
         </form>
+        <button class="btn btn-default" id="exportexcel">导出excel</button>
+        <button class="btn btn-primary" id="zhutu">显示柱状图</button>
+        <button class="btn btn-info" id="zhexiantu">显示折线图</button>
+        <button class="btn btn-success" id="bingyu">显示饼状图</button>
         <table class="layui-table" id="qkfxt" lay-filter="qkfxt">
 
         </table>
 
-        <script>
-            layui.use('form', function(){
-                var form = layui.form;
-                form.render();
-                form.on('radio()', function(data){
-                    console.log(data.elem); //得到radio原始DOM对象
-                    console.log(data.value); //被点击的radio的value值
-                });
-            });
-            layui.use('table', function() {
-                var table = layui.table;
-                table.render({
-                    elem: '#qkfxt',
-                    url:'qkfx.json',
-                    cols: [[
-                        {field:'publisher',  title: '出版社'},
-                        {field:'num',  title: '借阅次数', },
-                    ]]
-
-
-                });
-            });
-        </script>
+       
 
     </div>
 </body>
 </html>
+<script>
+    var table;
+    layui.use('form', function(){
+        var form = layui.form;
+        form.render();
+        form.on('radio()', function(data){
+            console.log(data.elem); //得到radio原始DOM对象
+            console.log(data.value); //被点击的radio的value值
+        });
+    });
+    layui.use('table', function() {
+        table = layui.table;
+        table.render({
+            elem: '#qkfxt',
+            url:'qkfx.json',
+            // id:"qkfxtb",
+            cols: [[
+                {field:'publisher',  title: '出版社'},
+                {field:'num',  title: '借阅次数', },
+            ]]
+
+
+        });
+    });
+$("#exportexcel").click(function(event) {
+    console.log(table.cache.qkfxt);
+    $.data2excel({
+        name: "期刊资料分析",
+        filename:"期刊资料分析",
+        content:[
+             {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }, {
+                  "publisher":"黑龙江省出版",
+                  "num":10
+
+
+                }
+        ],
+        title:[
+            "出版社","数量"
+        ],
+        fileds:["publisher", "num"],
+    })
+});
+</script>
