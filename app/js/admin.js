@@ -15,6 +15,9 @@ $(document).ready(function() {
     $("#booksfx").click(function (e) {
         $("#ucontent").load("bookfx.html");
     })
+    $("#booktype").click(function(event) {
+        $("#ucontent").load("booktype.html");
+    });
     $("#qk").click();
 
 });

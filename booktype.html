@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图书类型</title>
+</head>
+<body>
+	<div class="container">
+  		<div class="tgroup">
+	        <div class="form form-inline">
+	            <input class="form-control" type="text" name="" id="name" placeholder="名称">
+	            <button class="btn btn-primary">查询</button>
+	        </div>
+	        <div class="form form-inline">
+	            <input class="form-control" type="text" name="" id="name" placeholder="名称">
+	            <button class="btn btn-primary" id="addType">添加</button>
+	        </div>
+   		</div>
+	    <table class="layui-table" id="booktypet" lay-filter="booktypet">
+
+   		</table>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+    layui.use('table', function() {
+        var table = layui.table;
+        table.render({
+            elem: '#booktypet',
+            url:'booktypet.json',
+            cols: [[
+                {field:'publisher',  title: '出版社'},
+                {field:'time',  title: '添加时间', },
+            ]]
+
+
+        });
+    });
+</script>
