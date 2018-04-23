@@ -29,6 +29,7 @@
     <table class="layui-table" id="bookfxt" lay-filter="bookfxt">
 
     </table>
+    <div id="hc"></div>
 
 
 </div>
@@ -117,4 +118,57 @@ $("#exportexcel").click(function(event) {
         fileds:["publisher", "num"],
     })
 });
+$("#zhutu").click(function(event) {
+    createch ('column')
+});
+$("#zhexiantu").click(function(event) {
+     createch ('line')
+});
+function createch (type) {
+var chart = Highcharts.chart('hc', {
+    chart: {
+        type: type
+        // type: 'line'
+        // type: 'pie'
+    },
+    title: {
+        text: '出版社统计情况'
+    },
+    subtitle: {
+        // text: '数据来源：thesolarfoundation.com'
+    },
+    yAxis: {
+        title: {
+            text: '期刊数量'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+    xAxis: {
+            categories: ['黑龙江出版社', '机械工业出版社', '电子工业出版社', '清华大学出版社', '长江出版社'],
+            tickLength:10
+        },
+    series: [{
+        name: '期刊数量',
+        data: [11744, 17722, 16005, 19771, 20185]
+    }],
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+});
+}
     </script>
