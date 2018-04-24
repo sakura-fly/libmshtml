@@ -7,11 +7,11 @@
 <body>
 	<div class="container">
   		<div class="tgroup">
-	        <div class="form form-inline">
+	        <div class="form form-inline tip">
 	            <input class="form-control" type="text" name="" id="name" placeholder="名称">
 	            <button class="btn btn-primary">查询</button>
 	        </div>
-	        <div class="form form-inline">
+	        <div class="form form-inline tip">
 	            <input class="form-control" type="text" name="" id="name" placeholder="名称">
 	            <button class="btn btn-primary" id="addType">添加</button>
 	        </div>
@@ -29,7 +29,7 @@
             elem: '#booktypet',
             url:'booktypet.json',
             cols: [[
-                {field:'publisher',  title: '出版社'},
+                {field:'type',  title: '出版社'},
                 {field:'time',  title: '添加时间', },
                 {fixed: 'right',  align:'center', toolbar: '#barDemo',  title: '操作'}
             ]]
@@ -44,3 +44,9 @@
     <!-- <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a> -->
 
 </script>
+<style type="text/css">
+	.tip{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+</style>

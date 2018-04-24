@@ -18,6 +18,9 @@ $(document).ready(function() {
     $("#booktype").click(function(event) {
         $("#ucontent").load("booktype.html");
     });
+    $("#publisheradmin").click(function(event) {
+        $("#ucontent").load("publisheradmin.html");
+    });
     $("#qk").click();
 
 });
