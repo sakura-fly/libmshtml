@@ -21,6 +21,10 @@ $(document).ready(function() {
     $("#publisheradmin").click(function(event) {
         $("#ucontent").load("publisheradmin.html");
     });
+    $("#statmentam").click(function(event) {
+        $("#ucontent").load("statement.html");
+    });
+
     $("#qk").click();
 
 });
